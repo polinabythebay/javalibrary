@@ -1,9 +1,12 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+
 import au.com.bytecode.opencsv.CSVReader;
+import au.com.bytecode.opencsv.CSVWriter;
 
 
 /*
@@ -15,8 +18,8 @@ import au.com.bytecode.opencsv.CSVReader;
 
 public class CSVReadWrite {
 
-  
-	public void loadCSV(String strFileName, char delimiter) {
+	
+	public void readCSV(String strFileName, char delimiter) {
   	  
         try {
        	 CSVReader reader = new CSVReader(new FileReader(strFileName), delimiter );
@@ -44,5 +47,24 @@ public class CSVReadWrite {
        	 System.err.println("IO Exception");
         }
      }
+	
+	public void writeCSV(String fileName, char delimiter){
+	
+    try {	
+		   CSVWriter writer = new CSVWriter(new FileWriter(fileName), delimiter);
+		   
+		   //can iterate through a collection to generate attributes for each row 
+			   String[] row = new String[2];
+			   row[0]= "first column, first row";
+			   row[1]= "second column, first row";
+			   writer.writeNext(row);	
+		  
+		   writer.close();
+		   
+	 } catch(IOException e){
+	     e.printStackTrace();
+	   	}
+    
+	}
 	
 }
