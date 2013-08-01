@@ -15,7 +15,7 @@ import org.apache.commons.cli.ParseException;
  * This Class methodically lays out an example of using Options from Apache Commons, 
  * including how to create options with multiple arguments 
  */
-public class OptionsExample {
+public class Options {
   
 	private static Options createOptions() {
 
