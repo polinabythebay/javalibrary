@@ -7,7 +7,7 @@ import com.google.common.collect.MinMaxPriorityQueue;
  * @purpose: Examples of how to instantiate helpful
  * and interesting hybrid data structures from the Guava Libraries  
  */
-public class GuavaExample {
+public class Guava {
   
 	//this handy DS accesses the min and max elt of a collection
 	//in constant time 
